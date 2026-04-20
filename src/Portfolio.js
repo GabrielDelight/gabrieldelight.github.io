@@ -954,7 +954,7 @@ export default function Portfolio() {
           <h2 className="section-title">Published Work</h2>
           <div style={{ maxWidth: 780 }}>
             {WRITING.map((w) => (
-              <a href={w.url}>
+              <a href={w.url} target="_blank">
                 <div key={w.org} className="writing-card">
                   <div
                     style={{
