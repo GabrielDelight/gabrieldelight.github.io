@@ -144,18 +144,21 @@ const WRITING = [
     period: "Sep 2022 – Jul 2024",
     count: "20+",
     topics: "React Native, Blockchain, Web3 tooling, WebRTC, CSS, Jest",
+    url: "https://blog.openreplay.com/authors/gabriel-delight/",
   },
   {
     org: "Semaphore CI",
     period: "May 2023 – Mar 2024",
     count: "5",
     topics: "Solidity, React Native, ERC-20, DeFi, Hardhat",
+    url: "https://semaphore.io/author/gabriel-delight",
   },
   {
     org: "Pieces",
     period: "Oct 2022 – Nov 2023",
     count: "Several",
     topics: "React, JavaScript, UI Frameworks, API Integration",
+    url: "https://pieces.app/blog/author/gabriel-delight",
   },
 ];
 
@@ -229,7 +232,6 @@ export default function Portfolio() {
     document
       .getElementById(id.toLowerCase())
       ?.scrollIntoView({ behavior: "smooth" });
-    
   };
 
   return (
@@ -461,6 +463,8 @@ export default function Portfolio() {
         }
         .contact-input:focus { border-color: #00d4aa; }
         .on_mobile_view {display: none}
+
+        #writing a {text-decoration: none}
 
         @media (max-width: 768px) {
           .section { padding: 64px 0; }
@@ -950,64 +954,66 @@ export default function Portfolio() {
           <h2 className="section-title">Published Work</h2>
           <div style={{ maxWidth: 780 }}>
             {WRITING.map((w) => (
-              <div key={w.org} className="writing-card">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: 10,
-                    flexWrap: "wrap",
-                    gap: 8,
-                  }}
-                >
-                  <h3
+              <a href={w.url}>
+                <div key={w.org} className="writing-card">
+                  <div
                     style={{
-                      fontFamily: "'Syne', sans-serif",
-                      fontWeight: 700,
-                      fontSize: 17,
-                      color: "#f8fafc",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginBottom: 10,
+                      flexWrap: "wrap",
+                      gap: 8,
                     }}
                   >
-                    {w.org}
-                  </h3>
-                  <div
-                    style={{ display: "flex", gap: 16, alignItems: "center" }}
-                  >
-                    <span
+                    <h3
                       style={{
-                        fontSize: 22,
                         fontFamily: "'Syne', sans-serif",
-                        fontWeight: 800,
-                        color: "#00d4aa",
+                        fontWeight: 700,
+                        fontSize: 17,
+                        color: "#f8fafc",
                       }}
                     >
-                      {w.count}
-                    </span>
-                    <span style={{ fontSize: 11, color: "#64748b" }}>
-                      articles
-                    </span>
-                    <span
-                      style={{
-                        fontSize: 11,
-                        color: "#64748b",
-                        letterSpacing: "0.04em",
-                      }}
+                      {w.org}
+                    </h3>
+                    <div
+                      style={{ display: "flex", gap: 16, alignItems: "center" }}
                     >
-                      {w.period}
-                    </span>
+                      <span
+                        style={{
+                          fontSize: 22,
+                          fontFamily: "'Syne', sans-serif",
+                          fontWeight: 800,
+                          color: "#00d4aa",
+                        }}
+                      >
+                        {w.count}
+                      </span>
+                      <span style={{ fontSize: 11, color: "#64748b" }}>
+                        articles
+                      </span>
+                      <span
+                        style={{
+                          fontSize: 11,
+                          color: "#64748b",
+                          letterSpacing: "0.04em",
+                        }}
+                      >
+                        {w.period}
+                      </span>
+                    </div>
                   </div>
+                  <p
+                    style={{
+                      fontSize: 12.5,
+                      color: "#64748b",
+                      letterSpacing: "0.03em",
+                    }}
+                  >
+                    {w.topics}
+                  </p>
                 </div>
-                <p
-                  style={{
-                    fontSize: 12.5,
-                    color: "#64748b",
-                    letterSpacing: "0.03em",
-                  }}
-                >
-                  {w.topics}
-                </p>
-              </div>
+              </a>
             ))}
           </div>
         </section>
